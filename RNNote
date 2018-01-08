@@ -1,0 +1,123 @@
+未知异常：adb uninstall appname 试试看
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Module HMRClient is not a registerd callable module
+
+Dev Setting里面设置的IP不正确的！！！
+
+解决方式：关掉热加载，或者配置正确的ip
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Error:The SDK Build Tools revision (23.0.3) is too low for project ':Yampp'. Minimum required is 25.0.0
+
+Error:com.android.ddmlib.InstallException
+
+修改三个文件里gradle版本： 
+			  android/gradle/wrapper/gradle-wrapper.properties
+			  android/build.gradle
+              android/app/src/build.gradle
+
+gradle版本可适配
+
+nx508j     2.2.3  android/build.gradle
+           2.14.1 android/gradle/wrapper/gradle-wrapper.properties
+
+OPPO A37m  2.3.0  android/build.gradle
+           3.3    android/gradle/wrapper/gradle-wrapper.properties
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Error:unable to load script from assets
+
+手动在main下创建一个assets文件
+在项目跟目录下执行下列命令
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+加第三方库的时候有可能报错：  
+		
+		一些函数undefined，命令行再次运行react-native link
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+The SDK Build Tools revision (23.0.1) is too low for project ':react-native-datetime'. Minimum required is 25.0.0
+
+查看android/app/src/build.gradle下 SDK Build Tools revision  修改成对应需要的版本
+
+如果还不行，则去对应报错的库下面的android/build.gradle下修改SDK Build Tools revision 
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+com.android.builder.testing.api.DeviceException: com.android.ddmlib.InstallException: Failed to finalize session : INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES: New package has a different signature: com.xjfirparttime
+
+删除原应用，重新运行
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+加载出来的一直都是原来的某一个版本。
+
+查看自己的JS server服务有没有成功运行起来（应该是没有），查看具体报错情况
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Could not find any version that matches com.facebook.react:react-native:0.25.+.
+           Versions that do not match:
+               0.20.1
+               0.20.0
+               0.19.1
+               0.19.0
+               0.18.0
+               + 13 more
+           Required by:
+               project :react-native-datetime
+
+
+               去对应库下面的android/build.gradle修改至符合的版本
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
